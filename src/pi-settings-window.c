@@ -9,6 +9,9 @@
 
 #include "pi-settings-window.h"
 
+#include "pi-network-panel.h"
+#include "pi-sound-panel.h"
+
 struct _PiSettingsWindow
 {
    GtkApplicationWindow parent_instance;
@@ -20,6 +23,8 @@ void
 pi_settings_window_class_init (PiSettingsWindowClass *klass)
 {
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+
+  g_type_ensure (pi_network_panel_get_type ());
 
   gtk_widget_class_set_template_from_resource (widget_class, "/com/example/raspi-settings/pi-settings-window.ui");
 

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/example/raspi-settings">
+    <file preprocess="xml-stripblanks">pi-network-panel.ui</file>
     <file preprocess="xml-stripblanks">pi-settings-window.ui</file>
+    <file preprocess="xml-stripblanks">pi-sound-panel.ui</file>
   </gresource>
 </gresources>

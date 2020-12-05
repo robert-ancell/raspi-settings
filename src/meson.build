@@ -1,11 +1,16 @@
 sources = files(
   'main.c',
+  'pi-network-panel.c',
   'pi-settings-app.c',
+  'pi-settings-panel.c',
   'pi-settings-window.c',
+  'pi-sound-panel.c',
 )
 
 resource_files = files(
+  'pi-network-panel.ui',
   'pi-settings-window.ui',
+  'pi-sound-panel.ui',
 )
 
 sources += gnome.compile_resources(
