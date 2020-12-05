@@ -28,6 +28,18 @@
             <child>
               <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
+                <property name="label" translatable="yes">Mouse</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiSettingsPanelRow">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Keyboard</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiSettingsPanelRow">
+                <property name="visible">True</property>
                 <property name="label" translatable="yes">Security</property>
               </object>
             </child>
