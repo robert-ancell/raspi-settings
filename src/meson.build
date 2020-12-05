@@ -3,12 +3,14 @@ sources = files(
   'pi-network-panel.c',
   'pi-settings-app.c',
   'pi-settings-panel.c',
+  'pi-settings-panel-row.c',
   'pi-settings-window.c',
   'pi-sound-panel.c',
 )
 
 resource_files = files(
   'pi-network-panel.ui',
+  'pi-settings-panel-row.ui',
   'pi-settings-window.ui',
   'pi-sound-panel.ui',
 )

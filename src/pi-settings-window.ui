@@ -8,102 +8,57 @@
           <object class="GtkListBox">
             <property name="visible">True</property>
             <child>
-              <object class="GtkListBoxRow">
+              <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Network</property>
-                  </object>
-                </child>
+                <property name="label" translatable="yes">Network</property>
               </object>
             </child>
             <child>
-              <object class="GtkListBoxRow">
+              <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Display</property>
-                  </object>
-                </child>
+                <property name="label" translatable="yes">Display</property>
               </object>
             </child>
             <child>
-              <object class="GtkListBoxRow">
+              <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Sound</property>
-                  </object>
-                </child>
+                <property name="label" translatable="yes">Sound</property>
               </object>
             </child>
             <child>
-              <object class="GtkListBoxRow">
+              <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Security</property>
-                  </object>
-                </child>
+                <property name="label" translatable="yes">Security</property>
               </object>
             </child>
             <child>
-              <object class="GtkListBoxRow">
+              <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Startup</property>
-                  </object>
-                </child>
+                <property name="label" translatable="yes">Startup</property>
               </object>
             </child>
             <child>
-              <object class="GtkListBoxRow">
+              <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Hardware</property>
-                  </object>
-                </child>
+                <property name="label" translatable="yes">Hardware</property>
               </object>
             </child>
             <child>
-              <object class="GtkListBoxRow">
+              <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Printers</property>
-                  </object>
-                </child>
+                <property name="label" translatable="yes">Printers</property>
               </object>
             </child>
             <child>
-              <object class="GtkListBoxRow">
+              <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Date and Time</property>
-                  </object>
-                </child>
+                <property name="label" translatable="yes">Date and Time</property>
               </object>
             </child>
             <child>
-              <object class="GtkListBoxRow">
+              <object class="PiSettingsPanelRow">
                 <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Language</property>
-                  </object>
-                </child>
+                <property name="label" translatable="yes">Language</property>
               </object>
             </child>
           </object>
