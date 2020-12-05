@@ -5,4 +5,6 @@ project(
   meson_version : '>= 0.53.0'
 )
 
+gnome = import('gnome')
+
 subdir('src')

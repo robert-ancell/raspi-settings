@@ -19,11 +19,17 @@ G_DEFINE_TYPE (PiSettingsWindow, pi_settings_window, GTK_TYPE_APPLICATION_WINDOW
 void
 pi_settings_window_class_init (PiSettingsWindowClass *klass)
 {
+  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+
+  gtk_widget_class_set_template_from_resource (widget_class, "/com/example/raspi-settings/pi-settings-window.ui");
+
+  //gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, );
 }
 
 void
 pi_settings_window_init (PiSettingsWindow *self)
 {
+  gtk_widget_init_template (GTK_WIDGET (self));
 }
 
 PiSettingsWindow *
