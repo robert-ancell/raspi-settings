@@ -27,17 +27,28 @@ struct _PiSettingsWindow
 {
   GtkApplicationWindow parent_instance;
 
+  PiSettingsPanel    *date_time_panel;
   PiSettingsPanelRow *date_time_row;
+  PiSettingsPanel    *display_panel;
   PiSettingsPanelRow *display_row;
+  PiSettingsPanel    *hardware_panel;
   PiSettingsPanelRow *hardware_row;
+  PiSettingsPanel    *keyboard_panel;
   PiSettingsPanelRow *keyboard_row;
+  PiSettingsPanel    *language_panel;
   PiSettingsPanelRow *language_row;
+  PiSettingsPanel    *mouse_panel;
   PiSettingsPanelRow *mouse_row;
+  PiSettingsPanel    *network_panel;
   PiSettingsPanelRow *network_row;
-  GtkBox             *panel_box;
+  GtkStack           *panel_stack;
+  PiSettingsPanel    *printer_panel;
   PiSettingsPanelRow *printer_row;
+  PiSettingsPanel    *security_panel;
   PiSettingsPanelRow *security_row;
+  PiSettingsPanel    *sound_panel;
   PiSettingsPanelRow *sound_row;
+  PiSettingsPanel    *startup_panel;
   PiSettingsPanelRow *startup_row;
 };
 
@@ -48,40 +59,32 @@ panel_row_activated_cb (PiSettingsWindow *self, PiSettingsPanelRow *row)
 {
   PiSettingsPanel *panel;
   if (row == self->date_time_row) {
-    panel = PI_SETTINGS_PANEL (pi_date_time_panel_new ());
+    panel = self->date_time_panel;
   } else if (row == self->display_row) {
-    panel = PI_SETTINGS_PANEL (pi_display_panel_new ());
+    panel = self->display_panel;
   } else if (row == self->hardware_row) {
-    panel = PI_SETTINGS_PANEL (pi_hardware_panel_new ());
+    panel = self->hardware_panel;
   } else if (row == self->keyboard_row) {
-    panel = PI_SETTINGS_PANEL (pi_keyboard_panel_new ());
+    panel = self->keyboard_panel;
   } else if (row == self->language_row) {
-    panel = PI_SETTINGS_PANEL (pi_language_panel_new ());
+    panel = self->language_panel;
   } else if (row == self->mouse_row) {
-    panel = PI_SETTINGS_PANEL (pi_mouse_panel_new ());
+    panel = self->mouse_panel;
   } else if (row == self->network_row) {
-    panel = PI_SETTINGS_PANEL (pi_network_panel_new ());
+    panel = self->network_panel;
   } else if (row == self->printer_row) {
-    panel = PI_SETTINGS_PANEL (pi_printer_panel_new ());
+    panel = self->printer_panel;
   } else if (row == self->security_row) {
-    panel = PI_SETTINGS_PANEL (pi_security_panel_new ());
+    panel = self->security_panel;
   } else if (row == self->sound_row) {
-    panel = PI_SETTINGS_PANEL (pi_sound_panel_new ());
+    panel = self->sound_panel;
   } else if (row == self->startup_row) {
-    panel = PI_SETTINGS_PANEL (pi_startup_panel_new ());
+    panel = self->startup_panel;
   } else {
     return;
   }
 
-  // Remove existing panel
-  g_autoptr(GList) children = gtk_container_get_children (GTK_CONTAINER (self->panel_box));
-  for (GList *l = children; l != NULL; l = l->next) {
-    GtkWidget *child = l->data;
-    gtk_widget_destroy (child);
-  }
-
-  gtk_widget_show (GTK_WIDGET (panel));
-  gtk_container_add (GTK_CONTAINER (self->panel_box), GTK_WIDGET (panel));
+  gtk_stack_set_visible_child (self->panel_stack, GTK_WIDGET (panel));
 }
 
 void
@@ -89,22 +92,43 @@ pi_settings_window_class_init (PiSettingsWindowClass *klass)
 {
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
-  g_type_ensure (pi_settings_panel_row_get_type ());
+  g_type_ensure (pi_date_time_panel_get_type ());
+  g_type_ensure (pi_display_panel_get_type ());
+  g_type_ensure (pi_hardware_panel_get_type ());
+  g_type_ensure (pi_keyboard_panel_get_type ());
+  g_type_ensure (pi_language_panel_get_type ());
+  g_type_ensure (pi_mouse_panel_get_type ());
   g_type_ensure (pi_network_panel_get_type ());
+  g_type_ensure (pi_printer_panel_get_type ());
+  g_type_ensure (pi_security_panel_get_type ());
+  g_type_ensure (pi_settings_panel_row_get_type ());
+  g_type_ensure (pi_sound_panel_get_type ());
+  g_type_ensure (pi_startup_panel_get_type ());
 
   gtk_widget_class_set_template_from_resource (widget_class, "/com/example/raspi-settings/pi-settings-window.ui");
 
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, date_time_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, date_time_row);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, display_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, display_row);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, hardware_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, hardware_row);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, keyboard_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, keyboard_row);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, language_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, language_row);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, mouse_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, mouse_row);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, network_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, network_row);
-  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, panel_box);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, panel_stack);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, printer_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, printer_row);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, security_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, security_row);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, sound_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, sound_row);
+  gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, startup_panel);
   gtk_widget_class_bind_template_child (widget_class, PiSettingsWindow, startup_row);
 
   gtk_widget_class_bind_template_callback (widget_class, panel_row_activated_cb);

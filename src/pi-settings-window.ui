@@ -77,8 +77,63 @@
           </object>
         </child>
         <child>
-          <object class="GtkBox" id="panel_box">
+          <object class="GtkStack" id="panel_stack">
             <property name="visible">True</property>
+            <child>
+              <object class="PiDateTimePanel" id="date_time_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiDisplayPanel" id="display_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiHardwarePanel" id="hardware_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiKeyboardPanel" id="keyboard_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiLanguagePanel" id="language_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiMousePanel" id="mouse_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiNetworkPanel" id="network_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiPrinterPanel" id="printer_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiSecurityPanel" id="security_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiSoundPanel" id="sound_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="PiStartupPanel" id="startup_panel">
+                <property name="visible">True</property>
+              </object>
+            </child>
           </object>
         </child>
       </object>
