@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/example/raspi-settings">
+    <file preprocess="xml-stripblanks">pi-date-time-panel.ui</file>
+    <file preprocess="xml-stripblanks">pi-display-panel.ui</file>
+    <file preprocess="xml-stripblanks">pi-hardware-panel.ui</file>
+    <file preprocess="xml-stripblanks">pi-keyboard-panel.ui</file>
+    <file preprocess="xml-stripblanks">pi-language-panel.ui</file>
+    <file preprocess="xml-stripblanks">pi-mouse-panel.ui</file>
     <file preprocess="xml-stripblanks">pi-network-panel.ui</file>
+    <file preprocess="xml-stripblanks">pi-printer-panel.ui</file>
+    <file preprocess="xml-stripblanks">pi-security-panel.ui</file>
     <file preprocess="xml-stripblanks">pi-settings-panel-row.ui</file>
     <file preprocess="xml-stripblanks">pi-settings-window.ui</file>
     <file preprocess="xml-stripblanks">pi-sound-panel.ui</file>
+    <file preprocess="xml-stripblanks">pi-startup-panel.ui</file>
   </gresource>
 </gresources>

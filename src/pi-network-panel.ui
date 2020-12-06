@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <template class="PiNetworkPanel" parent="PiSettingsPanel">
+    <child>
+      <object class="GtkLabel">
+        <property name="visible">True</property>
+        <property name="label">Network</property>
+      </object>
+    </child>
   </template>
 </interface>

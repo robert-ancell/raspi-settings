@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <template class="PiSoundPanel" parent="PiSettingsPanel">
+  <template class="PiMousePanel" parent="PiSettingsPanel">
     <child>
       <object class="GtkLabel">
         <property name="visible">True</property>
-        <property name="label">Sound</property>
+        <property name="label">Mouse</property>
       </object>
     </child>
   </template>

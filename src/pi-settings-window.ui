@@ -7,68 +7,69 @@
         <child>
           <object class="GtkListBox">
             <property name="visible">True</property>
+            <signal name="row-activated" handler="panel_row_activated_cb" object="PiSettingsWindow" swapped="yes"/>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="network_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Network</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="display_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Display</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="sound_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Sound</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="mouse_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Mouse</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="keyboard_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Keyboard</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="security_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Security</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="startup_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Startup</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="hardware_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Hardware</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="printer_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Printers</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="date_time_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Date and Time</property>
               </object>
             </child>
             <child>
-              <object class="PiSettingsPanelRow">
+              <object class="PiSettingsPanelRow" id="language_row">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Language</property>
               </object>
@@ -76,7 +77,7 @@
           </object>
         </child>
         <child>
-          <object class="PiNetworkPanel">
+          <object class="GtkBox" id="panel_box">
             <property name="visible">True</property>
           </object>
         </child>
